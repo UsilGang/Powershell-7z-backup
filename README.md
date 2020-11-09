@@ -5,11 +5,11 @@
 (EN) The script can archive content (folders \ files) by direct access or from a shadow copy. [7-zip](http://7-zip.org/ "official site") is used for archiving. The author is not responsible for any consequences as a result of the installation and use of this script, the user uses it "as is" at his own peril and risk.
 
 ----
-Перед использованием необходимо установить [7-zip](http://7-zip.org/ "official site")
+Перед использованием необходимо установить [7-zip](http://7-zip.org/ "official site"). При архивации из теневых копий скрипт создает копии, но не проверят настройки теневых копий, потому необходимо проверить, чтобы на диске, с которого собираемся архивировать было включено теневое копирование.*(Мой компьютер->свойства->защита системы->выбрать диск->нажать "настроить"->выбрать "включить защиту"->указать размер отводимый под теневые копии->ок)*
 
 В репозитории 3 файла:
 
-1. install.ps1: *Автоматическая установка и настройка скрипта. Копирует скрипт backup_lite.ps1 в папку %appdata%, создает ярлык "Архивация.lnk" на рабочем столе и задание в "планировщике заданий" windows.*
+1. install.ps1: *Автоматическая установка и настройка скрипта. Задает пароль на архив в скрипте backup_lite.ps1, копирует его в папку %appdata%, создает ярлык "Архивация.lnk" на рабочем столе и задание в "планировщике заданий" windows.*
 
 **Usage:** *install.ps1 %1 %2 %3*
 * %1 - путь до каталога с файлами, которые архивируем;
@@ -39,6 +39,4 @@
 ```powershell
   Backup -SrcPath $var1 -DstPath $var2 -TypeBackup $var3 -HasSendMail $var4	
 ```
-
-
 
