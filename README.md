@@ -39,4 +39,15 @@
 ```powershell
   Backup -SrcPath $var1 -DstPath $var2 -TypeBackup $var3 -HasSendMail $var4	
 ```
-
+Для отправки почтовых уведомлений необхдимо отредактировать скрипт
+```powershell
+# Mail Message
+$From = "sender@mail.ru"
+$To = "receiver@mail.ru"
+$SecureTextPassword = @()
+```
+Пароль задается в **$SecureTextPassword**, для перевода можно воспользоваться скриптом ниже,
+```powershell
+"p@SsWoRd YoUr MaIl" | ConvertTo-SecureString -AsPlainText -Force | ConvertFrom-SecureString | Set-Content "C:\password.txt"
+```
+также при настройке скрипта надо помнить, что пароль переведенный в "SecureString", будет работать только из под той учтеной записи, на которой он создан. т.е. под другой учтекой или на другом ПК, нужно пароль перегенерировать.
